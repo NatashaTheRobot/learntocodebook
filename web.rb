@@ -25,5 +25,9 @@ post '/charge' do
     env['sinatra.error'].message
   end
 
-  File.read(File.join('public', 'index.html'))
+  redirect "/thanks/123"
+end
+
+get '/thanks/:token' do
+  File.read(File.join('views', 'thanks.html.erb'))
 end
